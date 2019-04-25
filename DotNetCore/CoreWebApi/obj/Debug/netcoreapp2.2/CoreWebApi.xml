@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CoreWebApi</name>
+    </assembly>
+    <members>
+        <member name="M:CoreWebApi.Controllers.ValuesController.Get">
+            <summary>
+            方法注释
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CoreWebApi.Controllers.ValuesController.GetModel">
+            <summary>
+            返回Test实体
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CoreWebApi.Controllers.ValuesController.Get(System.Int32)">
+            <summary>
+            带参数的注释
+            </summary>
+            <param name="id">ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:CoreWebApi.Models.Test">
+            <summary>
+            测试类
+            </summary>
+        </member>
+        <member name="P:CoreWebApi.Models.Test.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:CoreWebApi.Models.Test.Name">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:CoreWebApi.Models.Test.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+    </members>
+</doc>
