@@ -4,6 +4,17 @@
         <name>CoreWebApi</name>
     </assembly>
     <members>
+        <member name="T:CoreWebApi.Controllers.TestController">
+            <summary>
+            需认证的控制器
+            </summary>
+        </member>
+        <member name="M:CoreWebApi.Controllers.TestController.Get(CoreWebApi.Models.TokenModel)">
+            <summary>
+            认证通过之后可访问
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:CoreWebApi.Controllers.ValuesController.Get">
             <summary>
             方法注释
@@ -21,6 +32,14 @@
             带参数的注释
             </summary>
             <param name="id">ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreWebApi.Controllers.ValuesController.GetJwt(System.Int32,System.String)">
+            <summary>
+            获取令牌
+            </summary>
+            <param name="ID">ID</param>
+            <param name="name">账号</param>
             <returns></returns>
         </member>
         <member name="T:CoreWebApi.Models.Test">
@@ -41,6 +60,60 @@
         <member name="P:CoreWebApi.Models.Test.Email">
             <summary>
             邮箱
+            </summary>
+        </member>
+        <member name="P:CoreWebApi.Models.TokenModel.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:CoreWebApi.Models.TokenModel.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:CoreWebApi.Models.TokenModel.Phone">
+            <summary>
+            手机
+            </summary>
+        </member>
+        <member name="P:CoreWebApi.Models.TokenModel.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:CoreWebApi.Models.TokenModel.Sub">
+            <summary>
+            身份
+            </summary>
+        </member>
+        <member name="T:CoreWebApi.Token">
+            <summary>
+            生成JWT字符串
+            </summary>
+        </member>
+        <member name="M:CoreWebApi.Token.GetJWT(CoreWebApi.Models.TokenModel)">
+            <summary>
+            生成JWT字符串
+            </summary>
+            <param name="tokenModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreWebApi.Token.SerializeJwt(System.String)">
+            <summary>
+            解析字符串
+            </summary>
+            <param name="jwtStr"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CoreWebApi.TokenAuth">
+            <summary>
+            身份验证中间件
+            </summary>
+        </member>
+        <member name="F:CoreWebApi.TokenAuth._next">
+            <summary>
+            http委托
             </summary>
         </member>
     </members>

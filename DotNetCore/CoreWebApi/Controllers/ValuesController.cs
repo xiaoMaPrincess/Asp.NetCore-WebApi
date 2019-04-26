@@ -59,5 +59,22 @@ namespace CoreWebApi.Controllers
         {
         }
 
+        /// <summary>
+        /// 获取令牌
+        /// </summary>
+        /// <param name="ID">ID</param>
+        /// <param name="name">账号</param>
+        /// <returns></returns>
+        [HttpPost]
+        public string GetJwt(int ID,string name)
+        {
+            TokenModel tokenModel = new TokenModel
+            {
+                ID = ID,
+                Name=name
+            };
+
+            return Token.GetJWT(tokenModel);
+        }
     }
 }
