@@ -14,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.Swagger;
 
@@ -84,14 +85,13 @@ namespace CoreWebApi
                 o.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey =  new SymmetricSecurityKey(Encoding.ASCII.GetBytes("xiaomaPrincess@gmail.com")),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Token.secretKey)),
                     ValidateIssuer = true,
                     ValidIssuer = "API",//发行人
                     ValidateAudience = true,
                     ValidAudience = "User",//订阅人
                     ValidateLifetime = true,
                     ClockSkew = TimeSpan.Zero,
-                    RequireExpirationTime = true,
                 };
             });
             #endregion
@@ -117,17 +117,18 @@ namespace CoreWebApi
                 app.UseHsts();
             }
 
+            IdentityModelEventSource.ShowPII = true;
             app.UseHttpsRedirection();
-            // 启用认证中间件
-            app.UseAuthentication();
-
+            // 启用Swagger中间件
+            app.UseSwagger();
             // 配置SwaggerUI
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "CoreWebApi");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "CoreAPI");
                 c.RoutePrefix = string.Empty;
             });
-            app.UseMiddleware<TokenAuth>();
+            // 启用认证中间件
+            app.UseAuthentication();
             app.UseMvc();
         }
     }

@@ -19,7 +19,6 @@ D:\DotNetCore\WebApi\Asp.NetCore-WebApi\DotNetCore\CoreWebApi\bin\Debug\netcorea
 D:\DotNetCore\WebApi\Asp.NetCore-WebApi\DotNetCore\CoreWebApi\bin\Debug\netcoreapp2.2\CoreWebApi.dll
 D:\DotNetCore\WebApi\Asp.NetCore-WebApi\DotNetCore\CoreWebApi\bin\Debug\netcoreapp2.2\CoreWebApi.pdb
 D:\DotNetCore\WebApi\Asp.NetCore-WebApi\DotNetCore\CoreWebApi\bin\Debug\netcoreapp2.2\CoreWebApi.xml
-D:\DotNetCore\WebApi\Asp.NetCore-WebApi\DotNetCore\CoreWebApi\obj\Debug\netcoreapp2.2\CoreWebApi.csprojAssemblyReference.cache
 D:\DotNetCore\WebApi\Asp.NetCore-WebApi\DotNetCore\CoreWebApi\obj\Debug\netcoreapp2.2\CoreWebApi.csproj.CoreCompileInputs.cache
 D:\DotNetCore\WebApi\Asp.NetCore-WebApi\DotNetCore\CoreWebApi\obj\Debug\netcoreapp2.2\CoreWebApi.RazorAssemblyInfo.cache
 D:\DotNetCore\WebApi\Asp.NetCore-WebApi\DotNetCore\CoreWebApi\obj\Debug\netcoreapp2.2\CoreWebApi.RazorAssemblyInfo.cs
@@ -29,3 +28,4 @@ D:\DotNetCore\WebApi\Asp.NetCore-WebApi\DotNetCore\CoreWebApi\obj\Debug\netcorea
 D:\DotNetCore\WebApi\Asp.NetCore-WebApi\DotNetCore\CoreWebApi\obj\Debug\netcoreapp2.2\CoreWebApi.dll
 D:\DotNetCore\WebApi\Asp.NetCore-WebApi\DotNetCore\CoreWebApi\obj\Debug\netcoreapp2.2\CoreWebApi.xml
 D:\DotNetCore\WebApi\Asp.NetCore-WebApi\DotNetCore\CoreWebApi\obj\Debug\netcoreapp2.2\CoreWebApi.pdb
+D:\DotNetCore\WebApi\Asp.NetCore-WebApi\DotNetCore\CoreWebApi\obj\Debug\netcoreapp2.2\CoreWebApi.csprojAssemblyReference.cache

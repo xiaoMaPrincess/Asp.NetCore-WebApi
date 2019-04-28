@@ -15,6 +15,7 @@ namespace CoreWebApi
     /// </summary>
     public class Token
     {
+        public static string secretKey { get; set; } = "xiaomaPrincess@gmail.com";
         /// <summary>
         /// 生成JWT字符串
         /// </summary>
@@ -26,10 +27,10 @@ namespace CoreWebApi
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Jti,tokenModel.ID.ToString()),
-                //new Claim(JwtRegisteredClaimNames.Iat, $"{new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds()}"),
-                new Claim(JwtRegisteredClaimNames.Iat,$"{DateTime.UtcNow}"), // 令牌颁发时间
-                new Claim(JwtRegisteredClaimNames.Nbf,$"{DateTime.UtcNow}"),
-                new Claim(JwtRegisteredClaimNames.Exp,$"{DateTime.UtcNow.AddSeconds(100)}"), // 过期时间
+                new Claim(JwtRegisteredClaimNames.Iat, $"{new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds()}"),
+                //new Claim(JwtRegisteredClaimNames.Iat,$"{DateTime.UtcNow}"), // 令牌颁发时间
+                new Claim(JwtRegisteredClaimNames.Nbf,$"{new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds()}"),
+                new Claim(JwtRegisteredClaimNames.Exp,$"{new DateTimeOffset(DateTime.Now.AddSeconds(100)).ToUnixTimeSeconds()}"), // 过期时间
                 new Claim(JwtRegisteredClaimNames.Iss,"API"), // 签发者
                 new Claim(JwtRegisteredClaimNames.Aud,"User") // 接收者
             };
@@ -37,13 +38,15 @@ namespace CoreWebApi
             // 可以将一个用户的多个角色全部赋予；
             //claims.AddRange(tokenModel.Role.Split(',').Select(s => new Claim(ClaimTypes.Role, s)));
             // 密钥
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("xiaomaPrincess@gmail.com"));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
+            var tokenHandler = new JwtSecurityTokenHandler();
+
             JwtSecurityToken jwt = new JwtSecurityToken(
-                //audience: tokenModel.Name,// 接收者
+                
                 claims: claims,// 声明的集合
-                               //expires: .AddSeconds(36), // token的有效时间
+                //expires: .AddSeconds(36), // token的有效时间
                 signingCredentials: creds
                 );
             var handler = new JwtSecurityTokenHandler();
@@ -66,9 +69,8 @@ namespace CoreWebApi
             {
                 jwt.Payload.TryGetValue(ClaimTypes.Role, out role);
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Console.WriteLine(e);
                 throw;
             }
             var tm = new TokenModel
