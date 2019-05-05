@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "3eaff87f72640fd637683d22d4ba4e77ce41c503"
+    "signature": "7083e11f8584e2c76e3c5d0e22e7f0eb6e179b2a"
   },
   "compilationOptions": {
     "defines": [
@@ -25,6 +25,8 @@
       "CoreWebApi/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.App": "2.2.0",
+          "Microsoft.AspNetCore.Mvc.Versioning": "3.1.2",
+          "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": "3.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.0",
@@ -35,6 +37,35 @@
         },
         "compile": {
           "CoreWebApi.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.Versioning/3.1.2": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "2.2.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Versioning.dll": {
+            "assemblyVersion": "3.1.0.0",
+            "fileVersion": "3.1.6968.34335"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Versioning.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer/3.2.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.ApiExplorer": "2.2.0",
+          "Microsoft.AspNetCore.Mvc.Versioning": "3.1.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll": {
+            "assemblyVersion": "3.2.0.0",
+            "fileVersion": "3.2.6968.34357"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll": {}
         }
       },
       "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
@@ -3599,6 +3630,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Microsoft.AspNetCore.Mvc.Versioning/3.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/SzDQOmzhvfBKorhBR4QKmIbyfe7nzjm/tekmbH+631nuBS5JJTeEf+T6SDAZE1TJXP0h2YTRIPj1a1Vv6j/8g==",
+      "path": "microsoft.aspnetcore.mvc.versioning/3.1.2",
+      "hashPath": "microsoft.aspnetcore.mvc.versioning.3.1.2.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer/3.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+Xaa1Qsny2idroDWfnjQh2ye1E+Fp/SjiS7DNUDFDKjf0iDbD0s15Phq+nzWXf5xJtY1T5QnZPvxiPBe4w0E1w==",
+      "path": "microsoft.aspnetcore.mvc.versioning.apiexplorer/3.2.0",
+      "hashPath": "microsoft.aspnetcore.mvc.versioning.apiexplorer.3.2.0.nupkg.sha512"
     },
     "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
       "type": "package",

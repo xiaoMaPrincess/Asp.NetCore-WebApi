@@ -10,12 +10,12 @@ using Microsoft.AspNetCore.Mvc;
 namespace CoreWebApi.Controllers
 {
     /// <summary>
-    /// 需认证的控制器
+    /// 需要身份认证的控制器
     /// </summary>
-    [Route("api/[controller]/[action]")]
-    [Produces("application/json")]
+    [Route("api/v2/[controller]/[action]")]
     [ApiController]
-    [Authorize]
+    [Authorize]// 添加授权特性
+    [ApiVersion("2.0")]
     public class TestController : ControllerBase
     {
         /// <summary>
@@ -23,7 +23,7 @@ namespace CoreWebApi.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult<TokenModel> Get([FromBody]TokenModel tokenModel)
+        public ActionResult<TokenModel> Get(TokenModel tokenModel)
         {
             return new TokenModel{ ID=1 };
         }

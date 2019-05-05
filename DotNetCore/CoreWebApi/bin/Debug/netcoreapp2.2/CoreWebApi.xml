@@ -6,7 +6,7 @@
     <members>
         <member name="T:CoreWebApi.Controllers.TestController">
             <summary>
-            需认证的控制器
+            需要身份认证的控制器
             </summary>
         </member>
         <member name="M:CoreWebApi.Controllers.TestController.Get(CoreWebApi.Models.TokenModel)">
@@ -85,6 +85,11 @@
         <member name="P:CoreWebApi.Models.TokenModel.Sub">
             <summary>
             身份
+            </summary>
+        </member>
+        <member name="F:CoreWebApi.Startup.provider">
+            <summary>
+            Api版本信息
             </summary>
         </member>
         <member name="T:CoreWebApi.Token">

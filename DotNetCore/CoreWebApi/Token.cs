@@ -15,6 +15,7 @@ namespace CoreWebApi
     /// </summary>
     public class Token
     {
+        // 密钥，注意不能太短
         public static string secretKey { get; set; } = "xiaomaPrincess@gmail.com";
         /// <summary>
         /// 生成JWT字符串
@@ -27,10 +28,11 @@ namespace CoreWebApi
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Jti,tokenModel.ID.ToString()),
+                // 令牌颁发时间
                 new Claim(JwtRegisteredClaimNames.Iat, $"{new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds()}"),
-                //new Claim(JwtRegisteredClaimNames.Iat,$"{DateTime.UtcNow}"), // 令牌颁发时间
                 new Claim(JwtRegisteredClaimNames.Nbf,$"{new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds()}"),
-                new Claim(JwtRegisteredClaimNames.Exp,$"{new DateTimeOffset(DateTime.Now.AddSeconds(100)).ToUnixTimeSeconds()}"), // 过期时间
+                 // 过期时间 100秒
+                new Claim(JwtRegisteredClaimNames.Exp,$"{new DateTimeOffset(DateTime.Now.AddSeconds(100)).ToUnixTimeSeconds()}"),
                 new Claim(JwtRegisteredClaimNames.Iss,"API"), // 签发者
                 new Claim(JwtRegisteredClaimNames.Aud,"User") // 接收者
             };

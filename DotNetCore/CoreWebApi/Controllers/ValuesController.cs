@@ -7,7 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CoreWebApi.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [ApiVersion("1.0")]
+    [Route("api/v1/[controller]/[action]")]
     [ApiController]
     public class ValuesController : ControllerBase
     {
@@ -16,6 +17,7 @@ namespace CoreWebApi.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [MapToApiVersion("2.0")]
         public ActionResult<IEnumerable<string>> Get()
         {
             return new string[] { "value1", "value2" };
